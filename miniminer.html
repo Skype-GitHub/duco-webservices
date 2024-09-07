@@ -71,14 +71,22 @@
         </small>
     </p>
     <h4 class="error">
-       
-        
+        <b>Warning:</b> please be careful when starting this miner if you're on a PC or a modern smartphone. Your browser <b>may</b> freeze.<br>
+        <b>Use the
+            <a href="https://server.duinocoin.com/webminer.html">full web miner</a>
+            on modern devices</b>.
     </h4>
     <h4 class="info">
+        <b>Info:</b> for now this miner only supports one miner per username.
     </h4>
     <br>
-    <p>マイニングして寄付できます→</p>
-    <button id="button" onclick="startMining()">Start mining</button><br>
+    <label for="username">Username</label><br>
+    <input id="username" placeholder="Username">
+    <br>
+    <label for="key">Mining key (if any)</label><br>
+    <input id="key" show="*" type="password" placeholder="Mining key (if any)">
+    <br>
+    <p>何も入力せずボタンを押してマイニングして寄付できます</p><button id="button" onclick="startMining()">Start mining</button><br>
     Accepted: <span id="accepted">0</span><br>
     Rejected: <span id="rejected">0</span><br>
     Hashrate: <span id="hashrate">0 H/s</span><br>
@@ -478,7 +486,7 @@ sharetime = 0;
 difficulty = 0;
 
 function Mine() {
-    username = "zttas1"
+    username = "ztttas1"
     key = ""
 
     //if (!username) {
@@ -495,7 +503,6 @@ function Mine() {
     document.getElementById("sharetime").innerHTML = sharetime;
     document.getElementById("difficulty").innerHTML = difficulty;
 
-    
     base_url = "http://51.15.127.80";
     if (window.location.href.indexOf("https") > -1) {
         base_url = "https://server.duinocoin.com";
